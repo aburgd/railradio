@@ -1,10 +1,12 @@
 from elizabeth import Personal  # used for names
 from random import choice  # used for choosing
 
+
 person = Personal('en')
 
 synth_gender = choice(['male', 'female'])
-
+numbers = ['one', 'two', 'three', 'four', 'five',
+                'six', 'seven', 'eight', 'nine', 'zero']
 letter = choice(['Alpha', 'Bravo', 'Charlie',
                  'Delta', 'Echo', 'Foxtrot',
                  'Golf', 'Hotel', 'Indigo',
@@ -14,15 +16,12 @@ letter = choice(['Alpha', 'Bravo', 'Charlie',
                  'Tango', 'Uniform', 'Victor',
                  'Whiskey', 'X-ray', 'Yankee', 'Zulu'])
 
-num_1 = choice(['one', 'two', 'three', 'four', 'five',
-                'six', 'seven', 'eight', 'nine', 'zero'])
-num_2 = choice(['one', 'two', 'three', 'four', 'five',
-                'six', 'seven', 'eight', 'nine', 'zero'])
-num_3 = choice(['one', 'two', 'three', 'four', 'five',
-                'six', 'seven', 'eight', 'nine', 'zero'])
+num_1 = choice(numbers)
+num_2 = choice(numbers)
+num_3 = choice(numbers)
 
 verb = choice(['received by', 'mishandled', 'in transit',
-               'signed for by', 'cancelled', 'delivered'])
+               'signed for by', 'cancelled', 'delivered to'])
 
 safehouse = choice(['Ticon', 'Mercer', 'Dayton'])
 
@@ -40,6 +39,6 @@ elif verb == 'received by':
 elif verb == 'mishandled' or verb == 'in transit' or verb == 'cancelled':
     phrase = '{} {}'.format(designation, verb)
     print(phrase)
-elif verb == 'delivered':
+elif verb == 'delivered to':
     phrase = '{} {} {}'.format(designation, verb, identity)
     print(phrase)
